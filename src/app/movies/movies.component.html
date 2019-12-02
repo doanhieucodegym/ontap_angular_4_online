@@ -11,10 +11,27 @@
 <!--  </label>-->
 <!--</div>-->
 <h2>My favorite movie</h2>
-<ol class="movies">
-  <li class="movieListItem" *ngFor="let eachMovie of movies"
-      [class.selected] = "eachMovie === selectedMovie"
-  (click)="onSelect(eachMovie)" >
-    {{eachMovie.name}} - {{eachMovie.releaseYear}}
-  </li>
-</ol>
+<div class="parent">
+  <ol class="movies">
+    <li class="movieListItem" *ngFor="let eachMovie of movies"
+        [class.selected] = "eachMovie === selectedMovie"
+        (click)="onSelect(eachMovie)" >
+      {{eachMovie.name}} - {{eachMovie.releaseYear}}
+    </li>
+  </ol>
+  <div *ngIf="selectedMovie" class="details">
+    <h3>You select :{{selectedMovie.name}}</h3>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input [(ngModel)]="selectedMovie.name" ></td>
+      </tr>
+      <tr>
+        <td>release year:</td>
+        <td><input [(ngModel)]="selectedMovie.releaseYear"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
