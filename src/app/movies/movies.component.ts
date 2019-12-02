@@ -23,7 +23,13 @@ export class MoviesComponent implements OnInit {
   constructor(private movieService: MovieService) { }
   // viet  ham lay du lieu  do vao movieService
   getMoviesFormServices(): void {
-    this.movies = this.movieService.getMovies();
+    // this.movies = this.movieService.getMovies();
+    // theo doi su thay  doi
+    this.movieService.getMovies().subscribe(
+      (updateMovies) => {
+        this.movies = updateMovies;
+      }
+    );
   }
   ngOnInit() {
     this.getMoviesFormServices();
