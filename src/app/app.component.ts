@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 
 
 export class AppComponent implements OnInit {
-  title = 'Demo-project';
+  title = 'Demo-project Angular On Tap';
   ngOnInit(): void {
   }
 }
