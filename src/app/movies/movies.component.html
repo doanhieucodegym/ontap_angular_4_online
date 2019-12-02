@@ -19,19 +19,8 @@
       {{eachMovie.name}} - {{eachMovie.releaseYear}}
     </li>
   </ol>
-  <div *ngIf="selectedMovie" class="details">
-    <h3>You select :{{selectedMovie.name}}</h3>
-    <table>
-      <tr>
-        <td>Name:</td>
-        <td><input [(ngModel)]="selectedMovie.name" ></td>
-      </tr>
-      <tr>
-        <td>release year:</td>
-        <td><input [(ngModel)]="selectedMovie.releaseYear"></td>
-      </tr>
-    </table>
-  </div>
+<!--  gan  movie cho  selectMovie de truyen vao  chi app movie details-->
+<app-movie-details [movie12]="selectedMovie" ></app-movie-details>
 </div>
 
 

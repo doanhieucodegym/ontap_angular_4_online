@@ -1,0 +1,15 @@
+<!--// mang the div ben kia sang de truyen tu component  nay sang  componet  khac -->
+<!-- thay movie select thang movie vaf  phair  khoi tao cho nos mot  cai  doi tuong moi -->
+<div *ngIf="movie12" class="details">
+  <h3>You select :{{movie12.name}}</h3>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input [(ngModel)]="movie12.name" ></td>
+    </tr>
+    <tr>
+      <td>release year:</td>
+      <td><input [(ngModel)]="movie12.releaseYear"></td>
+    </tr>
+  </table>
+</div>
