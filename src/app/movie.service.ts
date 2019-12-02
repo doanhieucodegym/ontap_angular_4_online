@@ -3,6 +3,7 @@ import {fakeMovies} from './fake-movies';
 import {Movie} from './models/movie';
 // loadingdata asynchrously
 import {Observable, of} from 'rxjs';
+import {MessageService} from './message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +13,5 @@ export class MovieService {
  getMovies(): Observable <Movie[]>  {
    return of (fakeMovies) ;
  }
-  constructor() { }
+  constructor(public  messageService: MessageService) { }
 }
