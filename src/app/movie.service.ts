@@ -4,14 +4,28 @@ import {Movie} from './models/movie';
 // loadingdata asynchrously
 import {Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {catchError , map , tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
   // gia lap  du lieu
+  // tao locoahot cho service
+  private moviesURL = ' http://localhost:3000/movies';
  getMovies(): Observable <Movie[]>  {
-   return of (fakeMovies) ;
+   // return of (fakeMovies) ;
+   return this.http.get<Movie[]>(this.moviesURL).pipe(
+     tap(receivedMovies => console.log(`receivedMovies = ${JSON.stringify(receivedMovies)}`)),
+     catchError(error => of([]))
+   );
  }
-  constructor(public  messageService: MessageService) { }
+ getMovieFormId(id: number): Observable<Movie> {
+   return of (fakeMovies.find(movie => movie.id === id));
+
+ }
+  constructor(
+    private http: HttpClient,
+    public  messageService: MessageService) { }
 }

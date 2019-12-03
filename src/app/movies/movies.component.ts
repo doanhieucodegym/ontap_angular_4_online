@@ -12,11 +12,11 @@ import {MovieService} from '../movie.service';
 export class MoviesComponent implements OnInit {
 
   // khai bao ten  bien movie kieu  movie
-  movie: Movie = {
-    id: 1,
-    name: 'Star Wars',
-    releaseYear: 1997
-  }
+  // movie: Movie = {
+  //   id: 1,
+  //   name: 'Star Wars',
+  //   releaseYear: 1997
+  // }
   // movies = fakeMovies;
   // ko  lay truc  tiep ma  lay qua  service
   movies: Movie[];
@@ -37,11 +37,11 @@ export class MoviesComponent implements OnInit {
 
 
    // dinh nghia  ham  khi  click vao
-  selectedMovie: Movie;
-  onSelect(movie: Movie): void {
-    this.selectedMovie = movie;
-    console.log(`selectedMovie = ${JSON.stringify(this.selectedMovie)}`);
-  }
+  // selectedMovie: Movie;
+  // onSelect(movie: Movie): void {
+  //   this.selectedMovie = movie;
+  //   console.log(`selectedMovie = ${JSON.stringify(this.selectedMovie)}`);
+  // }
 
 
 
