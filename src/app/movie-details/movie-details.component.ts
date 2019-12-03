@@ -28,6 +28,9 @@ export class MovieDetailsComponent implements OnInit {
     // Call service to "get movie from id" ? movie kia  owr  file MovieService
     this.movieService.getMovieFormId(id).subscribe(movie => this.movie12  = movie);
   }
+  save(): void {
+    this.movieService.updateMovie(this.movie12).subscribe(() => this.goBack());
+  }
   goBack(): void {
     this.location.back();
   }
